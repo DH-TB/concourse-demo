@@ -9,6 +9,6 @@ image_resource:
 
 inputs:
 - name: git-name
-
+- name: semver-name
 run:             # 必须包含
-  path: git-name/demo/script.sh
+  path: git-name/script.sh

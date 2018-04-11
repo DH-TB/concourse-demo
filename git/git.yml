@@ -11,4 +11,4 @@ jobs:
   plan:
   - get: git-name  # get的resources，需要使用input resources将资源放到运行该task的容器中，否则获取不到
   - task: test
-    file: git-name/git/job-inputs.yml
+    file: git-name/job-inputs.yml

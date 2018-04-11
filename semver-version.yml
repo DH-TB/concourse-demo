@@ -1,8 +1,0 @@
-resources:
-- name: semver-name
-    type: semver
-    source:
-      driver: git
-      uri: git@github.com:DH-TB/project.git
-      file: master.txt   # 所有给定的file必须是一个路径
-      private_key: ((private-repo-key))

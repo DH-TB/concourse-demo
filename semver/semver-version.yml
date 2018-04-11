@@ -1,0 +1,27 @@
+resources:
+- name: semver-name
+    type: semver
+    source:
+      driver: git
+      uri: git@github.com:DH-TB/project.git
+      file: master.txt
+      private_key: ((private-repo-key))
+
+jobs:
+  - name: job-name
+    public: true
+    serial: true
+    plan:
+      - get: semver-name
+        trigger: true
+        params: {bump: patch}
+      - put: semver-name
+        params: {file: master.txt}  # 将自动生成的版本号push到version/number文件中
+      - task: build #所有的task运行前都启动一个新的容器，运行task，运行完毕之后rm这个容器
+        file: semver-name/git/job-inputs.yml
+
+#      - put: docker-image
+#        params:
+#          build: web-image
+#          tag: version/number
+#          tag_as_latest: true
