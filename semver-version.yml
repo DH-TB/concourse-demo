@@ -1,5 +1,5 @@
 resources:
-- name: version
+- name: semver-name
     type: semver
     source:
       driver: git

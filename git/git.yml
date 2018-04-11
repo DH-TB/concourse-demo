@@ -1,0 +1,14 @@
+resources:
+- name: git-name
+  type: git
+  source:
+    uri: git@github.com:DH-TB/concourse-demo.git
+    private_key: ((private-repo-key))    # (())引用变量
+
+jobs:
+- name: job-name
+  public: true
+  plan:
+  - get: git-name  # get的resources，需要使用input resources将资源放到运行该task的容器中，否则获取不到
+  - task: test
+    file: git-name/demo/job-inputs.yml

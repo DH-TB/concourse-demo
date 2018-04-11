@@ -1,7 +1,7 @@
 jobs:
-- name: hello-world
+- name: pipeline-name
   plan:
-  - task: say-hello
+  - task: say-pipeline
     trigger: true
     config:
       platform: linux
