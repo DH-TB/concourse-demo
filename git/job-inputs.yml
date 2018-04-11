@@ -1,0 +1,14 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: node
+    tag: 8.11.0-alpine
+
+inputs:
+- name: git-name
+
+run:             # 必须包含
+  path: git-name/script.sh

@@ -8,7 +8,7 @@ image_resource:
     tag: 8.11.0-alpine
 
 inputs:
-- name: git-name
 - name: semver-name
+
 run:             # 必须包含
   path: git-name/script.sh

@@ -18,7 +18,7 @@ jobs:
       - put: semver-name
         params: {file: master.txt}  # 将自动生成的版本号push到version/number文件中
       - task: build #所有的task运行前都启动一个新的容器，运行task，运行完毕之后rm这个容器
-        file: semver-name/git/job-inputs.yml
+        file: semver-name/semver/job-inputs.yml
 
 #      - put: docker-image
 #        params:
