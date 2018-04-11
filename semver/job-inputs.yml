@@ -11,4 +11,4 @@ inputs:
 - name: semver-name
 
 run:             # 必须包含
-  path: git-name/script.sh
+  path: semver-name/script.sh
